@@ -1,9 +1,9 @@
 {
   "name": "bookDirectoryProgram",
   "version": "1.0.0",
-  "description": "",
+  "description": "A book directory program for managing books",
   "main": "main.js",
-  "scripts": { 
+  "scripts": {
     "start": "node server.js",
     "devStart": "nodemon server.js"
   },
@@ -13,6 +13,10 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "express-ejs-layouts": "^2.5.1"
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^6.0.13"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
   }
 }
