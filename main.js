@@ -11,6 +11,7 @@ app.set("views", `${__dirname}/views`)
 app.set("layout", "layouts/layout") //sets the file (layout) within the folder (layouts) to the layout of the web app so that certain HTML wouldn't be repeated
 app.use(expressLayouts)
 app.use(express.static("public")) //Contains the public content e.g. js, css, images, etc.
+app.use(express.urlencoded())
 
 const mongoose = require("mongoose")
 mongoose.connect(process.env.DATABASE_URL, {
@@ -22,7 +23,9 @@ db.once("open", () => console.log("Connected to Mongoose"))
 
 // Routers
 const defaultRouter = require("./routes/default")
+const authorRoute = require("./routes/author")
 
 app.use("/", defaultRouter)
+app.use("/author", authorRoute)
 
 app.listen(process.env.PORT || 3000)
