@@ -4,8 +4,8 @@
   "description": "A book directory program for managing books",
   "main": "main.js",
   "scripts": {
-    "start": "node server.js",
-    "devStart": "nodemon server.js"
+    "start": "node main.js",
+    "devStart": "nodemon main.js"
   },
   "keywords": [],
   "author": "",
