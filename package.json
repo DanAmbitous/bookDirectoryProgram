@@ -1,5 +1,5 @@
 {
-  "name": "bookDirectoryProgram",
+  "name": "book-directory-program",
   "version": "1.0.0",
   "description": "A book directory program for managing books",
   "main": "main.js",

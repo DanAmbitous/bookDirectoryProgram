@@ -1,1 +1,22 @@
-All authors
+<h2>Search Authors</h2>
+
+<div class="search-specific-author">
+  <form action="/author" id="author-search-form">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="<%= searchOptions.name %>">
+
+    <script>
+      document.querySelector('#name').addEventListener('input', () => {
+        
+      })
+    </script>
+  </form>
+</div>
+
+<div class="authors-list-container">
+  <ul class="authors-list">
+    <% authors.forEach(author => { %>
+      <li class="author-name" ><%= author.name %></li>
+    <% }) %>
+  </ul>
+</div>
