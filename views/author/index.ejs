@@ -6,9 +6,18 @@
     <input type="text" name="name" id="name" value="<%= searchOptions.name %>">
 
     <script>
-      document.querySelector('#name').addEventListener('input', () => {
-        
+      //Code to have it search after each key press
+      const authorNameInput = document.querySelector('#name')
+
+      authorNameInput.addEventListener('input', (e) => {
+        e.preventDefault()
+        e.target.closest('#author-search-form').submit()
       })
+
+      authorNameInput.focus()
+      let value = authorNameInput.value
+      authorNameInput.value = ""
+      authorNameInput.value = value
     </script>
   </form>
 </div>
