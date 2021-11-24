@@ -24,9 +24,11 @@ db.once("open", () => console.log("Connected to Mongoose"))
 
 // Routers
 const defaultRouter = require("./routes/default")
-const authorRoute = require("./routes/author")
+const authorRouter = require("./routes/author")
+const bookRouter = require("./routes/book")
 
 app.use("/", defaultRouter)
-app.use("/author", authorRoute)
+app.use("/author", authorRouter)
+app.use("/book", bookRouter)
 
 app.listen(process.env.PORT || 3000)
