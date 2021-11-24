@@ -1,0 +1,31 @@
+<h2>Search Authors</h2>
+
+<div class="search-specific-book">
+  <form action="/book" id="book-search-form">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="<%= searchOptions.name %>">
+
+    <script>
+      //Code to have it search after each key press
+      const bookNameInput = document.querySelector('#name')
+
+      bookNameInput.addEventListener('input', (e) => {
+        e.preventDefault()
+        e.target.closest('#book-search-form').submit()
+      })
+
+      bookNameInput.focus()
+      let value = bookNameInput.value
+      bookNameInput.value = ""
+      bookNameInput.value = value
+    </script>
+  </form>
+</div>
+
+<div class="books-list-container">
+  <ul class="books-list">
+    <% books.forEach(book => { %>
+      <li class="book-name" ><%= book.name %></li>
+    <% }) %>
+  </ul>
+</div>

@@ -1,0 +1,21 @@
+<div class="book-input-container">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" value="<%= books.name %>">
+  <br>
+  <label for="author">Author</label>
+  <select name="author" id="author">
+    <% authors.forEach(author => { %>
+      <% if (author.id == books.author) { %>
+        <option selected label="<%= author.name %>" value="<%= author.id %>"><%= author.name %></option>
+      <% } else { %>
+        <option label="<%= author.name %>" value="<%= author.id %>"><%= author.name %></option>
+      <% } %>
+    <% }) %>
+  </select>
+  <label for="date">Publish Date</label>
+  <input type="date" name="pusblishDate" id="date" value="<%= books.publishDate == null ? '' : books.publishDate.toISOString().split('T')[0]%>">
+</div>
+
+<!-- name attribute is for calling it in the server e.g. body.name -->
+<!-- the value attribute is for the edit page as the book'd already have a name -->
+

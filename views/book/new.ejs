@@ -1,0 +1,14 @@
+<h2>New Author</h2>
+
+<%- include("../partials/errorMessage") %>
+
+<form action="/author" method="POST">
+  <div class="form-submission-container">
+    <%- include('./_form_fields') %> 
+
+    <div class="input-buttons">
+      <a href="/author">Cancel</a>
+      <button type='submit'>Add</button>
+    </div>
+  </div>
+</form>
