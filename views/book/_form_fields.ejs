@@ -1,21 +1,44 @@
-<div class="book-input-container">
-  <label for="name">Name</label>
-  <input type="text" id="name" name="name" value="<%= books.name %>">
-  <br>
-  <label for="author">Author</label>
+<div class="books-input-container">
+  <div class="books-name">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="<%= books.name %>">
+  </div>
+  <div class="author-selection">
+    <label for="author">Author</label>
   <select name="author" id="author">
     <% authors.forEach(author => { %>
       <% if (author.id == books.author) { %>
         <option selected label="<%= author.name %>" value="<%= author.id %>"><%= author.name %></option>
       <% } else { %>
-        <option label="<%= author.name %>" value="<%= author.id %>"><%= author.name %></option>
+        <option label="<%= author.name %>" value="<%= author.id%>"><%= author.name %></option>
       <% } %>
     <% }) %>
   </select>
-  <label for="date">Publish Date</label>
-  <input type="date" name="pusblishDate" id="date" value="<%= books.publishDate == null ? '' : books.publishDate.toISOString().split('T')[0]%>">
+  </div>
+  <div class="date">
+    <label for="date">Publish Date</label>
+    <input type="date" name="pusblishDate" id="date" value="<%= books.publishDate == null ? '' : books.publishDate.toISOString().split('T')[0]%>">
+  </div>
+  <div class="page-count">
+    <label for="pageCount">Number of Page</label>
+    <input type="number" name="pageCount" id="pageCount" min="1" value="<%= books.pageCount %>">
+  </div>
+  <div class="cover">
+    <label for="cover">Cover</label>
+    <p class="accepted-file-types">Accepted file types are image/jpeg, image/png, and images/gif</p>
+    <input type="file" name='cover'>
+  </div>
+  <div class="description">
+    <label for="description">Description</label>
+    <br>
+    <textarea name="description" id="description" cols="30" rows="10"><%= books.description %></textarea>
+  </div>
+  </div>
 </div>
 
-<!-- name attribute is for calling it in the server e.g. body.name -->
-<!-- the value attribute is for the edit page as the book'd already have a name -->
+<script>
+  document.querySelector('#date').defaultValue = "2014-1-1"
+</script>
 
+<!-- name attribute is for calling it in the server e.g. body.name -->
+<!-- the value attribute is for the edit page as the books'd already have a name -->

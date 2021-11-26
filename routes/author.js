@@ -5,6 +5,8 @@ const Author = require("../models/authorModel")
 
 //get all authors
 router.get("/", async (req, res) => {
+  console.log(req.protocol)
+
   let searchOptions = {}
 
   //Check to see the query has a value name="the name" (name is in the URL), null checking is for going into that url without via the menu bar
